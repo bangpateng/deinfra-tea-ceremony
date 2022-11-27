@@ -26,7 +26,7 @@
 
 ### 🚨 PENTING : Hanya Kalian Yang Bisa Ikut, Yang Sudah Masuk Whitelist dan Mendapatkan Token Code di Bot Telegramnya | TUTORIAL INI WAJIB DI JALANKAN DI UBUNTU 22.04
 
-## Instal Package
+## 1 . Instal Package
 
 ```
 sudo apt update
@@ -35,14 +35,14 @@ sudo apt install git
 sudo apt install screen
 ```
 
-## Open Port
+## 2 . Open Port
 
 ```
 ufw allow 22 && ufw allow 1080 && ufw allow 1443 && ufw allow 1800
 ufw enable
 ```
 
-## Instal Erlang 24.3
+## 3 . Instal Erlang 24.3
 
 ```
 apt install cmake clang gcc git curl libssl-dev build-essential automake autoconf libncurses5-dev elixir erlang
@@ -51,7 +51,7 @@ apt install cmake clang gcc git curl libssl-dev build-essential automake autocon
 apt -y install erlang-base erlang-public-key erlang-ssl
 ```
 
-## Install Tea Ceremony client and token
+## 4 . Install Tea Ceremony client and token
 
 ```
 wget https://tea.thepower.io/teaclient
@@ -60,7 +60,7 @@ wget https://tea.thepower.io/teaclient
 chmod +x teaclient
 ```
 
-## Start the Tea Ceremony client
+## 5 . Start the Tea Ceremony client
 
 ```
 screen -R tea
