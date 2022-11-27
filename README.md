@@ -71,7 +71,7 @@ screen -R tea
 |----------|---------------------|
 |Nickname|Nama Node Atau Nama Anda Bebas|
 |aaaaa|Token Code Ada Nanti di Share dev di Group Telegram nya|
-|bbbbb|Token Code Yang Kalian Dapet di Group Telegram|
+|bbbbb|Token Code Yang Kalian Dapet di Bot Telegram|
 
 1. `CTRL` + `A` + `D` (Lalu Untuk Berjalan di Background)
 2. Jika Anda Ingin Kembali ke Screen Yang Sudah Jalan Sebelumnya Buka di Tab Lain Jalankan `screen -Rd tea`
