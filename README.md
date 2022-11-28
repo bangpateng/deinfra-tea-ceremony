@@ -22,9 +22,9 @@
 
 | Komponen | Spesifikasi minimal |
 |----------|---------------------|
-|Sistem Operasi|Ubuntu 22.04|
+|Sistem Operasi|Ubuntu 20.04 / 22.04|
 
-### 🚨 PENTING : Hanya Kalian Yang Bisa Ikut, Yang Sudah Masuk Whitelist dan Mendapatkan Token Code di Bot Telegramnya | TUTORIAL INI WAJIB DI JALANKAN DI UBUNTU 22.04
+### 🚨 PENTING : Hanya Kalian Yang Bisa Ikut, Yang Sudah Masuk Whitelist dan Mendapatkan Token Code di Bot Telegramnya
 
 ## 1 . Instal Package
 
@@ -44,11 +44,32 @@ ufw enable
 
 ## 3 . Instal Erlang 24.3
 
+#### 🟢(JIKA PAKAI UBUNTU 22.04)
+
 ```
 apt install cmake clang gcc git curl libssl-dev build-essential automake autoconf libncurses5-dev elixir erlang
 ```
 ```
 apt -y install erlang-base erlang-public-key erlang-ssl
+```
+
+#### 🟢(JIKA PAKAI UBUNTU 20.04)
+
+```
+sudo apt update
+sudo apt install curl wget gnupg apt-transport-https -y
+```
+```
+curl -fsSL https://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc | sudo gpg --dearmor -o /usr/share/keyrings/erlang.gpg
+```
+
+```
+echo "deb [signed-by=/usr/share/keyrings/erlang.gpg] https://packages.erlang-solutions.com/ubuntu $(lsb_release -cs) contrib" | sudo tee /etc/apt/sources.list.d/erlang.list
+```
+
+```
+sudo apt update
+sudo apt install erlang
 ```
 
 ## 4 . Install Tea Ceremony client and token
