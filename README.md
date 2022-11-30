@@ -92,8 +92,32 @@ chmod +x teaclient
 |aaaaa|Token Code Ada Nanti di Share dev di Group Telegram nya Setiap Jam 4 Sore dan Jam 8 Malem FCFS|
 |bbbbb|Token Code Yang Kalian Dapet di Bot Telegram|
 
-## 6. Siapkan dan Install SSL
+## 6 . Install Docker Jika Belum (Optional)
+
 ```
+sudo apt update && sudo apt upgrade -y
+```
+```
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+sudo apt update && sudo apt install docker-ce docker-ce-cli containerd.io -y
+```
+
+```
+docker pull thepowerio/tpnode
+```
+
+```
+docker run -d -p 44000:44000 --name tptest thepowerio/tpnode
+```
+
+## 7. Siapkan dan Install SSL
+
+```
+cd /opt
+mkdir -p thepower/db/cert/
+cd
 apt-get install socat
 curl https://get.acme.sh | sh -s email=youractiveemail
 source ~/.bashrc
@@ -106,6 +130,7 @@ source ~/.bashrc
 Lalu Close VPS Kalian dan Buka Lagi Jalankan Perintah di Bawah
 
 ```
+source ~/.bashrc
 acme.sh --server letsencrypt --issue --standalone  -d your_node.example.com
 acme.sh --install-cert -d your_node.example.com \
 --cert-file /opt/thepower/db/cert/your_node.example.com.crt \
@@ -120,13 +145,52 @@ acme.sh --info -d your_node.example.com
 
 Penting : Jika di Dalam File `node.config` Kalian Hanya Terdapat Private Key Saja, Anda Bisa Menjalankan Ulang `./teaclient -n nickname aaaaa.bbbbb`
 
-Jika Kalian Mendapatkan output Sprti di Bawah Ini Jalankan `source ~/.bashrc` Lalu Ulangi Lagi Command di Atas
+## 8 . Docker RUN Node
 
 ```
-acme.sh: command not found
-acme.sh: command not found
-acme.sh: command not found
+cd /opt/thepower
+mkdir log
+cd
+cp node.config /opt/thepower/node.config
+cp genesis.txt /opt/thepower/genesis.txt
 ```
 
+```
+cd /opt/thepower
+docker run -d \
+--name tpnode \
+--restart unless-stopped \
+--mount type=bind,source="$(pwd)"/db,target=/opt/thepower/db \
+--mount type=bind,source="$(pwd)"/log,target=/opt/thepower/log \
+--mount type=bind,source="$(pwd)"/node.config,target=/opt/thepower/node.config \
+--mount type=bind,source="$(pwd)"/genesis.txt,target=/opt/thepower/genesis.txt \
+-p 1800:1800 \
+-p 1080:1080 \
+-p 1443:1443 \
+thepowerio/tpnode
+```
 
+## 9.  Check Status Node
+
+```
+curl http://your_node.example.com:1080/api/node/status | jq
+```
+
+| `your_node.example.com` |
+|----------|
+|Ganti Dengan Nama Host Anda Yang ada di dalam File `node.config`|
+
+## 10 . Bagaimana cara menghentikan node 
+Untuk menghentikan node, jalankan:
+```
+docker stop tpnode
+```
+```
+docker rm tpnode
+```
+```
+docker rmi thepowerio/tpnode
+```
+
+Selesai Masalah
 
