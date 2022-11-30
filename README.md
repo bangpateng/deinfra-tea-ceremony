@@ -92,6 +92,41 @@ chmod +x teaclient
 |aaaaa|Token Code Ada Nanti di Share dev di Group Telegram nya Setiap Jam 4 Sore dan Jam 8 Malem FCFS|
 |bbbbb|Token Code Yang Kalian Dapet di Bot Telegram|
 
-#### 🚨 PENTING : 
+## 6. Siapkan dan Install SSL
+```
+apt-get install socat
+curl https://get.acme.sh | sh -s email=youractiveemail
+source ~/.bashrc
+```
 
-WAITING LANJUTAN TUTOR
+| `youractiveemail` |
+|----------|
+|Isi Email Anda|
+
+Lalu Close VPS Kalian dan Buka Lagi Jalankan Perintah di Bawah
+
+```
+acme.sh --server letsencrypt --issue --standalone  -d your_node.example.com
+acme.sh --install-cert -d your_node.example.com \
+--cert-file /opt/thepower/db/cert/your_node.example.com.crt \
+--key-file /opt/thepower/db/cert/your_node.example.com.key \
+--ca-file /opt/thepower/db/cert/your_node.example.com.crt.ca.crt
+acme.sh --info -d your_node.example.com
+```
+
+| `your_node.example.com` |
+|----------|
+|Ganti Dengan Nama Host Anda Yang ada di dalam File `node.config`|
+
+Penting : Jika di Dalam File `node.config` Kalian Hanya Terdapat Private Key Saja, Anda Bisa Menjalankan Ulang `./teaclient -n nickname aaaaa.bbbbb`
+
+Jika Kalian Mendapatkan output Sprti di Bawah Ini Jalankan `source ~/.bashrc` Lalu Ulangi Lagi Command di Atas
+
+```
+acme.sh: command not found
+acme.sh: command not found
+acme.sh: command not found
+```
+
+
+
