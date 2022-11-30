@@ -180,7 +180,17 @@ curl http://your_node.example.com:1080/api/node/status | jq
 |----------|
 |Ganti Dengan Nama Host Anda Yang ada di dalam File `node.config`|
 
-## 10 . Bagaimana cara menghentikan node 
+## 10 . Masukan Domain ke Bot Telegram
+
+1. Oprn Bot Telegramnya : https://t.me/thepowerio_bot
+2. Klik `Whats Next`
+3. Klik `Done`
+4. Paste Domain kalian `http://YourDomain:1800/api/node/status
+5. Done
+
+YourDomain = your_node.example.com = Sama
+
+## 11 . Bagaimana cara menghentikan node 
 Untuk menghentikan node, jalankan:
 ```
 docker stop tpnode
