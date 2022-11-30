@@ -32,7 +32,6 @@
 sudo apt update
 sudo apt upgrade
 sudo apt install git
-sudo apt install screen
 ```
 
 ## 2 . Open Port
@@ -84,7 +83,6 @@ chmod +x teaclient
 ## 5 . Start the Tea Ceremony client
 
 ```
-screen -R tea
 ./teaclient -n nickname aaaaa.bbbbb
 ```
 
@@ -94,11 +92,6 @@ screen -R tea
 |aaaaa|Token Code Ada Nanti di Share dev di Group Telegram nya|
 |bbbbb|Token Code Yang Kalian Dapet di Bot Telegram|
 
-1. `CTRL` + `A` + `D` (Lalu Untuk Berjalan di Background)
-2. Jika Anda Ingin Kembali ke Screen Yang Sudah Jalan Sebelumnya Buka di Tab Lain Jalankan `screen -Rd tea`
-
 #### 🚨 PENTING : 
-
-1. Setelah Anda memulai klien, tunggu peserta lain. Tolong, JANGAN matikan klien Upacara Minum Teh selama 24 jam. (Karena Kita Menggunakan Screen jadi Bisa di Close Aja VPS Gak Ngapa)
 
 WAITING LANJUTAN TUTOR
