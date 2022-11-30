@@ -89,7 +89,7 @@ chmod +x teaclient
 | Variable | Ganti Dengan |
 |----------|---------------------|
 |Nickname|Nama Node Atau Nama Anda Bebas|
-|aaaaa|Token Code Ada Nanti di Share dev di Group Telegram nya|
+|aaaaa|Token Code Ada Nanti di Share dev di Group Telegram nya Setiap Jam 4 Sore dan Jam 8 Malem FCFS|
 |bbbbb|Token Code Yang Kalian Dapet di Bot Telegram|
 
 #### 🚨 PENTING : 
